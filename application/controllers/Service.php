@@ -11,7 +11,8 @@ class Service extends REST_Controller
         header("Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding");
         parent::__construct();
         $this->load->model('ServiceModel');
-        //$this->load->library('form_validation');
+        $this->load->library('form_validation');
+        $this->load->helper(['jwt', 'Authorization']);
     }
 
     public function index_get()
